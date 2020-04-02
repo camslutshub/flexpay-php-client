@@ -3,16 +3,16 @@
 require_once __DIR__.'/../src/Verotel/FlexPay/Client.php';
 require_once 'config.php';
 
-$brand = Verotel\FlexPay\Brand::create_from_merchant_id($FLEXPAYCONFIG['merchantId']);
+$brand = Bitsafe\FlexPay\Brand::create_from_merchant_id($FLEXPAYCONFIG['9762000001192516']);
 $flexpayClient = new Verotel\FlexPay\Client(
-    $FLEXPAYCONFIG['shopId'],
-    $FLEXPAYCONFIG['signatureKey'],
+    $FLEXPAYCONFIG['118674'],
+    $FLEXPAYCONFIG['hUpaee9YJPqrKJJjsk765zfPcR9QSH'],
     $brand
 );
 
 if (!$flexpayClient->validate_signature($_GET)){
     http_response_code(500);
-    echo "ERROR - Invalid signature!";
+    echo "ERROR - Invalid signature!";118674
     exit;
 }
 
